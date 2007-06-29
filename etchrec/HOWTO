@@ -1,0 +1,25 @@
+howto build full rails stack on Debian Etch, for slicehost
+
+get the etchrec gem: 
+  sudo gem install etchrec
+                                                           
+build the new debian partition
+setup ssh keys on your local machine
+
+login, and change root password
+
+run:
+
+cap setup_admin_account_as_root 
+ (add root password at prompt)
+cap setup_ssh_keys
+
+cap enable_security
+  enter in a new port for ssh (and make sure to change this in deploy.rb)
+  This will also remove the ability to login as root via ssh
+
+cap install_rails_stack
+
+cap setup
+cap deploy_with_migrations
+cap restart_apache
