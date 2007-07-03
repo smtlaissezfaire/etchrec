@@ -1,6 +1,7 @@
 
-test out the apache configuration
-overall testing
-gem-ify
-find other testers - possibly through rubyforge?
-does this integrate with the setup_scm command?
+Make a gem, & publish version 0.1 via rubyforge
+Add a generator
+Find testers (possibly through rubyforge)
+does the HTTPS apache config work?
+does this integrate with the setup_scm command from deprec?
+
