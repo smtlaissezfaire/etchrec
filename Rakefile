@@ -16,10 +16,25 @@ spec = Gem::Specification.new do |s|
     s.add_dependency 'deprec'
     s.add_dependency 'capistrano'
     
-    s.has_rdoc          = false
-    #s.extra_rdoc_files  = %w(README TODO DONE)
+    s.has_rdoc          = true
+    s.extra_rdoc_files  = %w(README TODO DONE LICENSE)
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
     pkg.need_tar = true
 end
+
+task :generate_rdoc do
+  %x(rdoc)
+end
+
+task :clobber_rdoc do
+  %x(rm -rf doc)
+end
+
+task :build => [
+  :clobber_rdoc,
+  :clobber_package, 
+  :generate_rdoc, 
+  :repackage
+]

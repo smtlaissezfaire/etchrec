@@ -4,4 +4,4 @@ Add a generator
 Find testers (possibly through rubyforge)
 does the HTTPS apache config work?
 does this integrate with the setup_scm command from deprec?
-
+Will the gem play nicely with subdomains?
