@@ -6,26 +6,30 @@ get the etchrec gem:
                                                            
 login to your server, via. ssh, and change the root password (if you haven't already).  Logout.
 
-Next, generate a configuration file by standing in your the root project directory:
-	# uncompleted etchrec generator here #
+Right now there are plans in work to create a generator, but for now, use deprec's while standing
+in the root of your project directory:
+  deprec --apply-to .
 
-Modify this config file to suit your needs.
+Modify this config file to suit your needs.  The one special thing that you must change is the
+require at the top of the file.  Change it from:
+
+  require 'deprec/recipes'
+
+to:
+  
+  require 'etchrec/recipes'
+  
 	
 Then run the following tasks:
 
 cap setup_admin_account_as_root 
  (add root password at prompt)
-
 cap setup_ssh_keys
-
 cap enable_security
   enter in a new port for ssh (and make sure to change this in deploy.rb)
   This will also remove the ability to login as root via ssh
-
 cap install_rails_stack
-
 cap setup
-
 cap deploy_with_migrations
-
 cap restart_apache
+
